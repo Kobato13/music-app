@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:edit, :update, :destroy]
 
   def index
-    @artist = Artist.all
+    @artists = Artist.all
   end
 
   def new 
