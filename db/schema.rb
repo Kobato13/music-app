@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_11_20_001724) do
 
   create_table "albums", force: :cascade do |t|
     t.string "name"
-    t.boolean "released"
+    t.boolean "released", default: false
     t.datetime "released_at"
     t.string "cover_art_url"
     t.string "kind"

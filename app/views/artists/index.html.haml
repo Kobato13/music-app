@@ -1,0 +1,19 @@
+%h1 Hello, World
+%p This is coming from artists#index
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Permalink
+      %th Bio
+      %th Formed at
+      %th Verified?
+      %th Verified_at
+      %th Avatar Url
+      %th Cover Photo Url
+  %tbody
+    - @artists.each do |artist|
+      %tr
+        %td
+        = artist.name
