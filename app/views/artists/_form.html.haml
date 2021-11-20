@@ -1,0 +1,24 @@
+= form_with model: @artist do |f|
+  = f.label :name
+  = f.text_field :name
+
+  %br/
+
+  = f.label :permalink
+  = f.text_field :permalink
+
+  %br/
+
+  = f.label :bio
+  = f.text_area :bio
+
+  = if f.object.errors[:bio].present?
+    %span
+    = f.object_error[:bio].to_sentence
+
+  %br/
+
+  = f.submit
+
+= link_to artists_path do
+  Back to index
