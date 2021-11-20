@@ -13,6 +13,7 @@
       %th Verified_at
       %th Avatar Url
       %th Cover Photo Url
+      %th Avatar
   %tbody
     - @artists.each do |artist|
       %tr
@@ -24,6 +25,7 @@
         %td= artist.verified_at
         %td= artist.avatar_url
         %td= artist.cover_photo_url
+        -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
         %td
           = link_to edit_artist_path(artist.id) do
             Edit
