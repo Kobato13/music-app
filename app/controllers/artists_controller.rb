@@ -11,11 +11,11 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(article_params)
+    @artist = Artist.new(artist_params)
 
     if @artist.save
       flash[:notice] = "An artist data was successfully created"
-      redirect_to articles_path
+      redirect_to artists_path
     else
       flash[:error] = "There are some errors encountered"
       render :new
@@ -28,7 +28,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      redirect_to artist_path, notice: "An artist data  was successfully updated"
+      redirect_to artists_path, notice: "An artist data  was successfully updated"
     else
       flash[:error] = "There are some errors encountered"
       render :edit
@@ -48,7 +48,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name)
+    params.require(:artist).permit(:name, :permalink, :bio)
   end
 
 end
