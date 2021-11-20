@@ -38,7 +38,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist.destroy
 
-    redirect_to artist_path, notice: "An artist data was successfully destroyed"
+    redirect_to artists_path, notice: "An artist data was successfully destroyed"
   end
 
   private

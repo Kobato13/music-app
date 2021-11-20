@@ -1,5 +1,6 @@
-%h1 Hello, World
 %p This is coming from artists#index
+%br/
+%br/
 
 %table
   %thead
@@ -15,17 +16,21 @@
   %tbody
     - @artists.each do |artist|
       %tr
+        %td= artist.name
+        %td= artist.permalink
+        %td= artist.bio
+        %td= artist.formed_at
+        %td= artist.verified
+        %td= artist.verified_at
+        %td= artist.avatar_url
+        %td= artist.cover_photo_url
         %td
-        = artist.name
-        %td
-        = artist.permalink
-        %td
-        = artist.bio
-        %td
-        = link_to edit_artist_path(artist.id) do
-          Edit
-        = link_to artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } do
-          Delete
-
-= link_to new_artist_path do
-  New Artist Data
+          = link_to edit_artist_path(artist.id) do
+            Edit
+          = link_to artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } do
+            Delete
+%br/
+%br/
+%button
+  = link_to new_artist_path do
+    New Artist Data
