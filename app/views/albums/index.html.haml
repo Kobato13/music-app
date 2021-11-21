@@ -12,7 +12,11 @@
     - @albums.each do |album|
       %tr{:class => "bg-gray-800"}
         %td{:class => "p-3"}= album.name
-        %td{:class => "p-3"}= album.released
+        %td{:class => "p-3"}
+          - if album.released
+            ="Yes"
+          - else
+            ="No"
         %td{:class => "p-3"}= album.released_at
         %td{:class => "p-3 max-w-xs"}
           %img{ src: "#{album.cover_art_url}" }

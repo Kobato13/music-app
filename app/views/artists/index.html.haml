@@ -22,7 +22,11 @@
         %td{:class => "p-3"}= artist.permalink
         %td{:class => "p-3"}= artist.bio
         %td{:class => "p-3"}= artist.formed_at
-        %td{:class => "p-3"}= artist.verified
+        %td{:class => "p-3"}
+          - if artist.verified
+            ="Yes"
+          - else
+            ="No"
         %td{:class => "p-3"}= artist.verified_at
         %td{:class => "p-3"}
           %img{ src: "#{artist.avatar_url}" }
