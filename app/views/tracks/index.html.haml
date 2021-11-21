@@ -1,0 +1,33 @@
+%table{:class => "table text-gray-400 border-separate space-y-6 text-sm"}
+  %thead{:class => "bg-gray-800 text-gray-500"}
+    %tr
+      %th{:class => "p-3"} Name
+      %th{:class => "p-3 text-left"} Url
+      %th{:class => "p-3 text-left"} Credits
+      %th{:class => "p-3 text-left"} Available
+      %th{:class => "text-center"} Action
+  %tbody
+    - @tracks.each do |track|
+      %tr{:class => "bg-gray-800"}
+        %td{:class => "p-3"}= track.name
+        %td{:class => "p-3"}= track.url
+        %td{:class => "p-3"}= track.credits
+        %td{:class => "p-3"}
+          - if track.available
+            ="Yes"
+          - else
+            ="No"
+        %td{:class => "p-3"}
+          %div{:class => "flex flex-row text-gray-400 mx-2"}
+            %div{:class => "hover:text-gray-100 px-1"}
+              = link_to edit_track_path(track.id) do
+                %i{:class => "text-base"}Edit
+            |
+            %div{:class => "hover:text-gray-100 px-1"}
+              = link_to track_path(track.id), method: :delete, data: { confirm: "Are you sure?" } do
+                %i{:class => "text-base"}Delete
+%br/
+%br/
+%button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}
+  = link_to new_track_path do
+    New Track Data

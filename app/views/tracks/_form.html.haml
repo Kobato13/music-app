@@ -1,0 +1,21 @@
+%div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
+  = form_with model: @track do |t|
+    = t.label :name
+    = t.text_field :name
+    %br/
+    = t.label :url
+    = t.text_field :url
+    %br/
+    = t.label :credits
+    = t.text_field :credits
+    %br/
+    = t.label :available
+    = t.check_box :available
+    %br/
+    = t.submit
+
+  %br/
+  %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}
+    = link_to tracks_path do
+      Back to index
+
