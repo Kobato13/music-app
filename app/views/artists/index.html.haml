@@ -1,38 +1,43 @@
-%p This is coming from artists#index
-%br/
-%br/
+-# %p This is coming from artists#index
+-# %br/
+-# %br/
 
-%table
-  %thead
+%table{:class => "table text-gray-400 border-separate space-y-6 text-sm"}
+  %thead{:class => "bg-gray-800 text-gray-500"}
     %tr
-      %th Name
-      %th Permalink
-      %th Bio
-      %th Formed at
-      %th Verified?
-      %th Verified_at
-      %th Avatar Url
-      %th Cover Photo Url
-      %th Avatar
+      %th{:class => "p-3"} Name
+      %th{:class => "p-3 text-left"} Permalink
+      %th{:class => "p-3 text-left"} Bio
+      %th{:class => "p-3 text-left"} Formed at
+      %th{:class => "p-3 text-left"} Verified?
+      %th{:class => "p-3 text-left"} Verified_at
+      %th{:class => "p-3 text-left"} Avatar Url
+      %th{:class => "p-3 text-left"} Cover Photo Url
+      %th{:class => "text-center"} Action
+      -# %th Avatar
   %tbody
     - @artists.each do |artist|
-      %tr
-        %td= artist.name
-        %td= artist.permalink
-        %td= artist.bio
-        %td= artist.formed_at
-        %td= artist.verified
-        %td= artist.verified_at
-        %td= artist.avatar_url
-        %td= artist.cover_photo_url
+      %tr{:class => "bg-gray-800"}
+        %td{:class => "p-3"}= artist.name
+        %td{:class => "p-3"}= artist.permalink
+        %td{:class => "p-3"}= artist.bio
+        %td{:class => "p-3"}= artist.formed_at
+        %td{:class => "p-3"}= artist.verified
+        %td{:class => "p-3"}= artist.verified_at
+        %td{:class => "p-3"}= artist.avatar_url
+        %td{:class => "p-3"}= artist.cover_photo_url
         -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
-        %td
-          = link_to edit_artist_path(artist.id) do
-            Edit
-          = link_to artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } do
-            Delete
+        %td{:class => "p-3"}
+          %div{:class => "flex flex-row text-gray-400 mx-2"}
+            %div{:class => "hover:text-gray-100 px-1"}
+              = link_to edit_artist_path(artist.id) do
+                %i{:class => "text-base"}Edit
+            |
+            %div{:class => "hover:text-gray-100 px-1"}
+              = link_to artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } do
+                %i{:class => "text-base"}Delete
 %br/
 %br/
-%button
+%button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}
   = link_to new_artist_path do
     New Artist Data

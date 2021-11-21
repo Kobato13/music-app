@@ -1,35 +1,44 @@
-= form_with model: @artist do |f|
-  = f.label :name
-  = f.text_field :name
-  %br/
-  = f.label :permalink
-  = f.text_field :permalink
-  %br/
-  = f.label :bio
-  = f.text_area :bio
-  = if f.object.errors[:bio].present?
-    %span
-    = f.object_error[:bio].to_sentence
-  %br/
-  = f.label :formed_at
-  = f.text_field :formed_at
-  %br/
-  = f.label :verified
-  = f.check_box :verified
-  %br/
-  = f.label :verified_at
-  = f.text_field :verified_at
-  %br/
-  = f.label :avatar_url
-  = f.text_field :avatar_url
-  %br/
-  = f.label :avatar
-  = f.file_field :avatar
-  %br/
-  = f.label :avatar_url
-  = f.text_field :cover_photo_url
-  %br/
-  = f.submit
+%div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
+  = form_with model: @artist do |f|
+    = f.label :name
+    = f.text_field :name
+    %br/
+    = f.label :permalink
+    = f.text_field :permalink
+    %br/
+    = f.label :bio
+    = f.text_area :bio
+    = if f.object.errors[:bio].present?
+      %span
+      = f.object_error[:bio].to_sentence
+    %br/
+    = f.label :formed_at
+    = f.text_field :formed_at
+    %br/
+    = f.label :verified
+    = f.check_box :verified
+    %br/
+    = f.label :verified_at
+    = f.text_field :verified_at
+    %br/
+    = f.label :avatar_url
+    = f.text_field :avatar_url
+    %br/
+    = f.label :avatar
+    = f.file_field :avatar
+    %br/
+    = f.label :avatar_url
+    = f.text_field :cover_photo_url
+    %br/
+    = f.submit
 
-= link_to artists_path do
-  Back to index
+    -# %input{class: "bg-gray-900 text-white pl-10 pr-4 py-2 rounded-lg w-full",
+    -#     sm: "bg-red-400 pl-2",
+    -#     focus: "outline-none bg-white text-gray-900",
+    -#     hover: "outline-none bg-white text-gray-900",
+    -#     placeholder: "Search by keywords"}
+  %br/
+  %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}
+    = link_to artists_path do
+      Back to index
+
