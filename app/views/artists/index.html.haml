@@ -26,7 +26,7 @@
         %td{:class => "p-3"}= artist.verified_at
         %td{:class => "p-3"}
           %img{ src: "#{artist.avatar_url}" }
-        %td{:class => "p-3"}= artist.cover_photo_url
+        %td{:class => "p-3 max-w-xs"}= artist.cover_photo_url
         -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}

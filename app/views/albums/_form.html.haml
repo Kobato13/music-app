@@ -1,0 +1,27 @@
+%div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
+  = form_with model: @album do |a|
+    = a.label :name
+    = a.text_field :name
+    %br/
+    = a.label :released
+    = a.check_box :released
+    %br/
+    = a.label :released_at
+    = a.text_area :released_at
+    %br/
+    = a.label :cover_art_url
+    = a.text_field :cover_art_url
+    %br/
+    = a.label :length
+    = a.text_field :length
+    %br/
+    = a.label :kind
+    = a.text_field :kind
+    %br/
+    = a.submit
+
+  %br/
+  %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}
+    = link_to albums_path do
+      Back to index
+
