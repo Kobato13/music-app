@@ -24,7 +24,8 @@
         %td{:class => "p-3"}= artist.formed_at
         %td{:class => "p-3"}= artist.verified
         %td{:class => "p-3"}= artist.verified_at
-        %td{:class => "p-3"}= artist.avatar_url
+        %td{:class => "p-3"}
+          %img{ src: "#{artist.avatar_url}" }
         %td{:class => "p-3"}= artist.cover_photo_url
         -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
         %td{:class => "p-3"}
