@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2021_11_20_054130) do
   create_table "albums", force: :cascade do |t|
     t.string "name"
     t.boolean "released", default: false
-    t.datetime "released_at"
+    t.string "released_at"
     t.string "cover_art_url"
     t.string "kind"
-    t.time "length"
+    t.string "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_11_20_054130) do
     t.string "name"
     t.string "permalink"
     t.text "bio"
-    t.datetime "formed_at"
+    t.string "formed_at"
     t.boolean "verified"
     t.datetime "verified_at"
     t.string "avatar_url"

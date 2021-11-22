@@ -16,9 +16,14 @@
     = a.text_field :length
     %br/
     = a.label :kind
-    = a.text_field :kind
+    = a.radio_button :kind, 'EP'
+    = a.label :kind, 'EP', :value => 'EP'
+    = a.radio_button :kind, 'LP'
+    = a.label :kind, 'LP', :value => 'LP'
+    = a.radio_button :kind, 'Single'
+    = a.label :kind, 'Single', :value => 'Single'
     %br/
-    = a.submit
+    = a.submit 'Create Album Data', :class => "p-2 bg-gray-500 text-gray-100 cursor-pointer"
 
   %br/
   %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}

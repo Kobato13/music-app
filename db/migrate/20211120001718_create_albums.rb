@@ -3,10 +3,10 @@ class CreateAlbums < ActiveRecord::Migration[6.1]
     create_table :albums do |t|
       t.string :name
       t.boolean :released, default: false
-      t.datetime :released_at
+      t.string :released_at
       t.string :cover_art_url
       t.string :kind
-      t.time :length
+      t.string :length
 
       t.timestamps
     end

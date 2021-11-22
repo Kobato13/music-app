@@ -1,10 +1,10 @@
 %div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
   = form_with model: @artist do |f|
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, :class => "m-0 h-6"
     %br/
     = f.label :permalink
-    = f.text_field :permalink
+    = f.text_field :permalink, :class => "m-0 h-6"
     %br/
     = f.label :bio
     = f.text_area :bio
@@ -13,24 +13,24 @@
       = f.object_error[:bio].to_sentence
     %br/
     = f.label :formed_at
-    = f.text_field :formed_at
+    = f.text_field :formed_at, :class => "m-0 h-6"
     %br/
     = f.label :verified
-    = f.check_box :verified
+    = f.check_box :verified, :class => "m-0 h-6"
     %br/
     = f.label :verified_at
-    = f.text_field :verified_at
+    = f.text_field :verified_at, :class => "m-0 h-6"
     %br/
     = f.label :avatar_url
-    = f.text_field :avatar_url
+    = f.text_field :avatar_url, :class => "m-0 h-6"
     %br/
     -# = f.label :avatar
     -# = f.file_field :avatar
     -# %br/
     = f.label :avatar_url
-    = f.text_field :cover_photo_url
+    = f.text_field :cover_photo_url, :class => "m-0 h-6"
     %br/
-    = f.submit
+    = f.submit 'Create Artist Data', :class => "p-2 bg-gray-500 text-gray-100 cursor-pointer"
 
     -# %input{class: "bg-gray-900 text-white pl-10 pr-4 py-2 rounded-lg w-full",
     -#     sm: "bg-red-400 pl-2",
