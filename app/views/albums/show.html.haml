@@ -1,0 +1,26 @@
+%div{:class => "grid justify-items-center mx-96 text-gray-400 border-separate space-y-6 text-sm"}
+  %p
+    %strong Name:
+    = @album.name
+  %p
+    %strong Released:
+    - if @album.released
+      ="Yes"
+    - else
+      ="No"
+  %p
+    %strong Released at:
+    = @album.released_at
+  %p
+    %strong Cover Art:
+    %div{:class => "p-3 max-w-xs"}
+      %img{ src: "#{@album.cover_art_url}" }
+  %p
+    %strong Length:
+    = @album.length
+  %p
+    %strong Kind:
+    = @album.kind
+
+  = link_to 'Edit', edit_album_path(@album)
+  = link_to 'Back', albums_path
