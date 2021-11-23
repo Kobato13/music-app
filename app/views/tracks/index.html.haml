@@ -20,12 +20,16 @@
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}
             %div{:class => "hover:text-gray-100 px-1"}
+              %i{:class => "text-base"}
+                = link_to 'Show', track
+            |
+            %div{:class => "hover:text-gray-100 px-1"}
               = link_to edit_track_path(track.id) do
-                %i{:class => "text-base"}Edit
+                %i.material-icons-outlined.text-base edit
             |
             %div{:class => "hover:text-gray-100 px-1"}
               = link_to track_path(track.id), method: :delete, data: { confirm: "Are you sure?" } do
-                %i{:class => "text-base"}Delete
+                %i.material-icons-round.text-base delete_outline
 %br/
 %br/
 %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}

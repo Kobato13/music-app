@@ -32,10 +32,10 @@
   = link_to 'Edit', edit_artist_path(@artist)
   = link_to 'Back', artists_path
 
--# -if @artist.avatar.attached?
--#   %p
--#     %strong Avatar:
--#     = image_tag @artist.avatar, width: "200px"
+  - if @artist.avatar.attached?
+    %p
+      %strong Avatar:
+      = image_tag @artist.avatar, width: "200px"
 
 -# -if @artist.cover_photo.attached?
 -#   %p

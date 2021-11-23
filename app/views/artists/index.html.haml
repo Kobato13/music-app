@@ -19,7 +19,7 @@
     - @artists.each do |artist|
       %tr{:class => "bg-gray-800"}
         %td{:class => "p-3"}= artist.name
-        %td{:class => "p-3"}= artist.permalink
+        %td{:class => "p-3"}= artist.name.downcase.split(" ").join("-")
         %td{:class => "p-3"}= artist.bio
         %td{:class => "p-3"}= artist.formed_at
         %td{:class => "p-3"}
@@ -32,7 +32,6 @@
           %img{ src: "#{artist.avatar_url}" }
         %td{:class => "p-3 max-w-xs"}
           %img{ src: "#{artist.cover_photo_url}" }
-        -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}
             %div{:class => "hover:text-gray-100 px-1"}
@@ -46,6 +45,9 @@
             %div{:class => "hover:text-gray-100 px-1"}
               = link_to artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } do
                 %i.material-icons-round.text-base delete_outline
+      -# %div
+      -#   - if artist.avatar.attached?
+      -#     = image_tag artist.avatar, width: "200px"
 %br/
 %br/
 %button{:class => "p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300"}

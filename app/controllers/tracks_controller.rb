@@ -1,9 +1,13 @@
 class TracksController < ApplicationController
 
-  before_action :set_album, only: [:edit, :update, :destroy]
+  before_action :set_track, only: [:edit, :update, :destroy, :show]
 
   def index
     @tracks = Track.all
+  end
+
+  def show
+
   end
 
   def new 
