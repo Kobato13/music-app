@@ -1,0 +1,43 @@
+%div{:class => "grid justify-items-center mx-96 text-gray-400 border-separate space-y-6 text-sm"}
+  %p
+    %strong Name:
+    = @artist.name
+  %p
+    %strong Permalink:
+    = @artist.permalink
+  %p
+    %strong Formed at:
+    = @artist.formed_at
+  %p
+    %strong Bio:
+    = @artist.bio
+  %p
+    %strong Verified:
+    - if @artist.verified
+      ="Yes"
+    - else
+      ="No"
+  %p
+    %strong Verified at:
+    = @artist.verified_at
+  %p
+    %strong Avatar:
+    %div{:class => "p-3 max-w-xs"}
+      %img{ src: "#{@artist.avatar_url}" }
+  %p
+    %strong Cover Photo:
+    %div{:class => "p-3 max-w-xs"}
+      %img{ src: "#{@artist.cover_photo_url}" }
+
+  = link_to 'Edit', edit_artist_path(@artist)
+  = link_to 'Back', artists_path
+
+-# -if @artist.avatar.attached?
+-#   %p
+-#     %strong Avatar:
+-#     = image_tag @artist.avatar, width: "200px"
+
+-# -if @artist.cover_photo.attached?
+-#   %p
+-#     %strong Cover photo:
+-#     = image_tag @artist.cover_photo, width: '200px'

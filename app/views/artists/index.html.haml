@@ -11,8 +11,8 @@
       %th{:class => "p-3 text-left"} Formed at
       %th{:class => "p-3 text-left"} Verified?
       %th{:class => "p-3 text-left"} Verified_at
-      %th{:class => "p-3 text-left"} Avatar Url
-      %th{:class => "p-3 text-left"} Cover Photo Url
+      %th{:class => "p-3 text-center"} Avatar
+      %th{:class => "p-3 text-center"} Cover Photo
       %th{:class => "text-center"} Action
       -# %th Avatar
   %tbody
@@ -28,12 +28,17 @@
           - else
             ="No"
         %td{:class => "p-3"}= artist.verified_at
-        %td{:class => "p-3"}
+        %td{:class => "p-3 max-w-xs"}
           %img{ src: "#{artist.avatar_url}" }
-        %td{:class => "p-3 max-w-xs"}= artist.cover_photo_url
+        %td{:class => "p-3 max-w-xs"}
+          %img{ src: "#{artist.cover_photo_url}" }
         -# %td= image_tag artist.avatar, width: "200px" if @artist.avatar.attached?
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}
+            %div{:class => "hover:text-gray-100 px-1"}
+              %i{:class => "text-base"}
+                = link_to 'Show', artist
+            |
             %div{:class => "hover:text-gray-100 px-1"}
               = link_to edit_artist_path(artist.id) do
                 %i{:class => "text-base"}Edit
