@@ -1,5 +1,10 @@
 %div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
   = form_with model: @album do |a|
+    - if @album.errors.any?
+      %h2{:class => "text-red-600"} Errors: 
+      %ul{:class => "text-red-600"}
+        - @album.errors.full_messages.each do |message|
+          %li= message
     = a.label :name
     = a.text_field :name
     %br/
@@ -10,7 +15,8 @@
     = a.text_field :released_at
     %br/
     = a.label :cover_art_url
-    = a.text_field :cover_art_url
+    -# = a.text_field :cover_art_url
+    = a.file_field :avatar
     %br/
     = a.label :length
     = a.text_field :length

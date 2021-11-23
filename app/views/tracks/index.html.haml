@@ -20,8 +20,7 @@
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}
             %div{:class => "hover:text-gray-100 px-1"}
-              %i{:class => "text-base"}
-                = link_to 'Show', track
+              = link_to 'visibility', track, class: "material-icons-outlined text-base"
             |
             %div{:class => "hover:text-gray-100 px-1"}
               = link_to edit_track_path(track.id) do

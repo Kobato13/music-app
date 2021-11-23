@@ -18,15 +18,17 @@
           - else
             ="No"
         %td{:class => "p-3"}= album.released_at
+        -# %td{:class => "p-3 max-w-xs"}
+        -#   %img{ src: "#{album.cover_art_url}" }
         %td{:class => "p-3 max-w-xs"}
-          %img{ src: "#{album.cover_art_url}" }
+          - if album.avatar.attached?
+            = image_tag album.avatar, width: "200px"
         %td{:class => "p-3"}= album.length
         %td{:class => "p-3"}= album.kind
         %td{:class => "p-3"}
           %div{:class => "flex flex-row text-gray-400 mx-2"}
             %div{:class => "hover:text-gray-100 px-1"}
-              %i{:class => "text-base"}
-                = link_to 'Show', album
+              = link_to 'visibility', album, class: "material-icons-outlined text-base"
             |
             %div{:class => "hover:text-gray-100 px-1"}
               = link_to edit_album_path(album.id) do

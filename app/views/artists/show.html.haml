@@ -20,10 +20,15 @@
   %p
     %strong Verified at:
     = @artist.verified_at
-  %p
-    %strong Avatar:
-    %div{:class => "p-3 max-w-xs"}
-      %img{ src: "#{@artist.avatar_url}" }
+  -# %p
+  -#   %strong Avatar:
+  -#   %div{:class => "p-3 max-w-xs"}
+  -#     %img{ src: "#{@artist.avatar_url}" }
+  - if @artist.avatar.attached?
+    %p
+      %strong Avatar:
+      %div{:class => "p-3 max-w-xs"}
+        = image_tag @artist.avatar, width: "200px"
   %p
     %strong Cover Photo:
     %div{:class => "p-3 max-w-xs"}
@@ -32,10 +37,6 @@
   = link_to 'Edit', edit_artist_path(@artist)
   = link_to 'Back', artists_path
 
-  - if @artist.avatar.attached?
-    %p
-      %strong Avatar:
-      = image_tag @artist.avatar, width: "200px"
 
 -# -if @artist.cover_photo.attached?
 -#   %p

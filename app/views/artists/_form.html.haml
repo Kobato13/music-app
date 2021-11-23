@@ -1,5 +1,10 @@
 %div{:class => "text-gray-400 border-separate space-y-6 text-sm"}
   = form_with model: @artist do |f|
+    - if @artist.errors.any?
+      %h2{:class => "text-red-600"} Errors: 
+      %ul{:class => "text-red-600"}
+        - @artist.errors.full_messages.each do |message|
+          %li= message
     = f.label :name
     = f.text_field :name, :class => "m-0 h-6"
     %br/
@@ -21,9 +26,9 @@
     = f.label :verified_at
     = f.text_field :verified_at, :class => "m-0 h-6"
     %br/
-    = f.label :avatar_url
-    = f.text_field :avatar_url, :class => "m-0 h-6"
-    %br/
+    -# = f.label :avatar_url
+    -# = f.text_field :avatar_url, :class => "m-0 h-6"
+    -# %br/
     = f.label :avatar
     = f.file_field :avatar
     %br/
