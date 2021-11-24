@@ -11,10 +11,15 @@
   %p
     %strong Released at:
     = @album.released_at
-  %p
-    %strong Cover Art:
-    %div{:class => "p-3 max-w-xs"}
-      %img{ src: "#{@album.cover_art_url}" }
+  -# %p
+  -#   %strong Cover Art:
+  -#   %div{:class => "p-3 max-w-xs"}
+  -#     %img{ src: "#{@album.cover_art_url}" }
+  - if @album.avatar.attached?
+    %p
+      %strong Avatar:
+      %div{:class => "p-3 max-w-xs"}
+        = image_tag @album.avatar, width: "200px"
   %p
     %strong Length:
     = @album.length

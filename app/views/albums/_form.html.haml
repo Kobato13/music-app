@@ -6,20 +6,20 @@
         - @album.errors.full_messages.each do |message|
           %li= message
     = a.label :name
-    = a.text_field :name
+    = a.text_field :name, :class => "m-0 h-6"
     %br/
     = a.label :released
-    = a.check_box :released
+    = a.check_box :released, :class => "m-0 h-4"
     %br/
     = a.label :released_at
-    = a.text_field :released_at
+    = a.text_field :released_at, :class => "m-0 h-6"
     %br/
     = a.label :cover_art_url
     -# = a.text_field :cover_art_url
     = a.file_field :avatar
     %br/
     = a.label :length
-    = a.text_field :length
+    = a.text_field :length, :class => "m-0 h-6"
     %br/
     = a.label :kind
     = a.radio_button :kind, 'EP'
