@@ -17,6 +17,20 @@
   </head>
 
   <body>
+    <div class="nav-bar bg-gray-700 text-gray-100">
+      <div class="nav-links">
+        <div class="nav-link">
+          <%= link_to "Artists", artists_path %>
+        </div>
+        <div class="nav-link">
+          <%= link_to "Albums", albums_path %>
+        </div>
+        <div class="nav-link">
+          <%= link_to "Tracks", tracks_path %>
+        </div>
+      </div>
+    </div>
+
     <div class="flex items-center justify-center min-h-screen bg-gray-900">
       <div class="col-span-12">
         <div class="overflow-auto lg:overflow-visible text-gray-400">
