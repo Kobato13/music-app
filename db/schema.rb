@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_11_20_054130) do
     t.string "name"
     t.text "credits"
     t.boolean "available", default: false
+    t.string "sound"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

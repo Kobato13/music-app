@@ -16,6 +16,9 @@
     %br/
     = t.label :available
     = t.check_box :available, :class => "m-0 h-4"
+    %br
+    =t.label :sound
+    =t.file_field :sound, direct_upload: true
     %br/
     = t.submit 'Create Track Data', :class => "p-2 bg-gray-500 text-gray-100 cursor-pointer"
 

@@ -5,6 +5,7 @@ class CreateTracks < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :credits
       t.boolean :available, default: false
+      t.string :sound
 
       t.timestamps
     end

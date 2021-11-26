@@ -52,7 +52,7 @@ class TracksController < ApplicationController
   end
 
   def track_params
-    params.require(:track).permit(:name, :url, :credits, :available)
+    params.require(:track).permit(:name, :url, :credits, :available, :sound)
   end
 
 end
