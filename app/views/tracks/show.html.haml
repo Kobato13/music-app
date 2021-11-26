@@ -14,6 +14,8 @@
       ="Yes"
     - else
       ="No"
+  %p
+    = audio_tag(rails_blob_url(@track.sound), controls: "controls", type: "track.sound.content_type") if @track.sound.audio?
 
   = link_to 'Edit', edit_track_path(@track)
   = link_to 'Back', tracks_path

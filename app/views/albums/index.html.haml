@@ -21,8 +21,8 @@
         -# %td{:class => "p-3 max-w-xs"}
         -#   %img{ src: "#{album.cover_art_url}" }
         %td{:class => "p-3 max-w-xs"}
-          - if album.avatar.attached?
-            = image_tag album.avatar, width: "200px"
+          - if album.cover_art_url.attached?
+            = image_tag album.cover_art_url, width: "200px"
         %td{:class => "p-3"}= album.length
         %td{:class => "p-3"}= album.kind
         %td{:class => "p-3"}

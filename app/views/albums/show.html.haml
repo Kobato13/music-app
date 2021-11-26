@@ -15,11 +15,11 @@
   -#   %strong Cover Art:
   -#   %div{:class => "p-3 max-w-xs"}
   -#     %img{ src: "#{@album.cover_art_url}" }
-  - if @album.avatar.attached?
+  - if @album.cover_art_url.attached?
     %p
       %strong Avatar:
       %div{:class => "p-3 max-w-xs"}
-        = image_tag @album.avatar, width: "200px"
+        = image_tag @album.cover_art_url, width: "200px"
   %p
     %strong Length:
     = @album.length
